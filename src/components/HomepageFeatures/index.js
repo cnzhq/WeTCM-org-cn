@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: '皇家太医院',
+    title: '苏州知轶',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        皇家太医院是一个虚构的机构，她旨在维护和发展中国传统医药
+        苏州知轶互联网工作室
       </>
     ),
   },
   {
-    title: '中国中医药',
+    title: '苏州知轶',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        中国中医药是古代中国流传下来的知识。要取其精华，去其糟粕，传承精华，守正创新。
+        苏州知轶互联网工作室
       </>
     ),
   },
   {
-    title: '未来展望',
+    title: '苏州知轶',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        本站是个人和志愿者共同维护的中医药知识网站，不涉及具体诊断和治疗，如有不适，请咨询医师。
+        苏州知轶互联网工作室
       </>
     ),
   },

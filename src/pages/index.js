@@ -16,12 +16,12 @@ function HomepageHeader() {
         
         {/* 1. 中文主标题：应用 .title-font (方正标语体) */}
         <h1 className={clsx('hero__title', 'title-font')}>
-          皇家太医院
+          苏州知轶
         </h1>
         
         {/* 2. 拉丁副标题：应用 .subtitle-font (思源宋体) */}
         <p className={clsx('hero__subtitle', 'subtitle-font')}>
-          Academia Medica Sinica Imperii
+          Suzhou Zhiyi
         </p>
         
         {/* modification end */}
@@ -50,7 +50,7 @@ export default function Home() {
     <Layout
       // 这里为了SEO，建议还是让浏览器标签页显示中文标题
       title="首页" 
-      description="皇家太医院 - Academia Medica Sinica Imperii">
+      description="苏州知轶 - Suzhou Zhiyi">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

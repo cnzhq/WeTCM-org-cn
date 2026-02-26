@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '皇家太医院',
-  tagline: 'Academia Medica Sinica Imperii',
+  title: '苏州知轶',
+  tagline: 'Suzhou Zhiyi',
   favicon: 'img/pic_logo_1333.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -83,17 +83,18 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: '皇家太医院',
+        title: '苏州知轶',
         logo: {
           alt: 'My Site Logo',
           src: 'img/pic_logo_1333.png',
         },
         items: [
+          /*
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '指南1',
+            label: '指南',
           },
           {to: '/blog', label: '博客', position: 'left'},
 
@@ -105,19 +106,21 @@ const config = {
 
           {
             href: 'https://www.njucm.edu.cn',
-            label: '南京中医药大学',
+            label: 'null',
             position: 'right',
           },
+          */
         ],
       },
       footer: {
         style: 'dark',
+        /*
         links: [
           {
             title: '文档',
             items: [
               {
-                label: '指南1',
+                label: '指南',
                 to: '/docs/intro',
               },
             ],
@@ -153,12 +156,13 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} 皇家太医院<br>
+        */
+        copyright: `Copyright © ${new Date().getFullYear()} 苏州知轶<br>
         <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
         <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" alt="知识共享署名-相同方式共享" width="132" height="46.5" style="margin-top: 10px;" /></a><br>
         本站的全部文字在<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
         rel="noopener noreferrer">CC BY-SA 4.0</a>协议之条款下提供，附加条款亦可能应用。<br>
-        本站与南京中医药大学(Nanjing University of Chinese Medicine)无关。本站不提供任何医学治疗方式，如有不适请咨询医师。<br>
+        All Rights Reserved.<br>
         <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
             苏ICP备2024061225号-2
           </a>`,
