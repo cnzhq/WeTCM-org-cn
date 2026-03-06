@@ -54,6 +54,8 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: '所有文章',
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
