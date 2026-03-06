@@ -3,7 +3,17 @@ sidebar_position: 1
 ---
 
 # 总纲
+这是正在建设中的指南。
 
+敬请谅解。
+
+我们正在努力建设本站的[博客](/blog)。
+您可以访问[博客](/blog)来获取更多内容。
+<br />
+<p className="txt-c">
+【以下为缺省内容】
+<br />
+</p>
 Let's discover **Docusaurus in less than 5 minutes**.
 
 ## Getting Started
