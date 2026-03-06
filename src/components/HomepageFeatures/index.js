@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: '苏州知轶',
+    title: 'WeTCM',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        苏州知轶互联网工作室
+        皇家太医院
       </>
     ),
   },
   {
-    title: '苏州知轶',
+    title: 'WeTCM',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        苏州知轶互联网工作室
+        皇家太医院
       </>
     ),
   },
   {
-    title: '苏州知轶',
+    title: 'WeTCM',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        苏州知轶互联网工作室
+        皇家太医院
       </>
     ),
   },

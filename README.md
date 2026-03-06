@@ -1,3 +1,7 @@
+# 关于网站
+该网站给予Meta的[Docusaurus](https://docusaurus.io/)软件开发而来。
+
+这是本人的第一次尝试网站开发。
 # Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.

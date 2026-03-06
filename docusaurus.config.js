@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '苏州知轶',
-  tagline: 'Suzhou Zhiyi',
+  title: '皇家太医院',
+  tagline: 'WeTCM',
   favicon: 'img/pic_logo_1333.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -83,7 +83,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: '苏州知轶',
+        title: '皇家太医院',
         
         logo: {
           alt: 'My Site Logo',
@@ -97,17 +97,23 @@ const config = {
             position: 'left',
             label: '指南',
           },
-          {to: '/blog', label: '博客', position: 'left'},
 
-{
+          {to: '/blog', label: '博客', position: 'left'},
+          {
             to: '/time',      // 对应 src/pages/about.md 的文件名
             label: 'UTC时间',  // 导航栏上显示的文字，您可以随意修改
             position: 'left',  // 放左边
           },
 
           {
+          href: 'https://wiki.wetcm.org.cn',
+         label: '百科',   // 可以换成你想要的文字
+         position: 'left',
+          },
+
+          {
             href: 'https://www.njucm.edu.cn',
-            label: 'null',
+            label: '友情链接',
             position: 'right',
           },
         ],
@@ -150,18 +156,18 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/',
               },
             ],
           },
         ],
         
-        copyright: `Copyright © ${new Date().getFullYear()} 苏州知轶<br>
+        copyright: `Copyright © ${new Date().getFullYear()} WeTCM<br>
         <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
         <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" alt="知识共享署名-相同方式共享" width="132" height="46.5" style="margin-top: 10px;" /></a><br>
         本站的全部文字在<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
-        rel="noopener noreferrer">CC BY-SA 4.0</a>协议之条款下提供，附加条款亦可能应用。<br>
-        All Rights Reserved.<br>
+        rel="noopener noreferrer">CC BY-SA 4.0</a>协议之条款下提供，附加条款亦可能应用<br>
+        本站不提供任何治疗内容，如有不适请咨询您的医师<br>
         <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
             苏ICP备2024061225号-2
           </a>
@@ -169,7 +175,12 @@ const config = {
           margin-right:2px;margin-left:8px;vertical-align: -3px"/>
          <a href="https://beian.mps.gov.cn/#/query/webSearch?code=32050902103224" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
         苏公网安备32050902103224号
-          </a>`,
+          </a><br>
+          Powered by
+          <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+            Docusaurus
+          </a>
+          `,
       },
       prism: {
         theme: prismThemes.github,

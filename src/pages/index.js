@@ -16,12 +16,12 @@ function HomepageHeader() {
         
         {/* 1. 中文主标题：应用 .title-font (方正标语体) */}
         <h1 className={clsx('hero__title', 'title-font')}>
-          苏州知轶
+          皇家太医院
         </h1>
         
         {/* 2. 拉丁副标题：应用 .subtitle-font (思源宋体) */}
         <p className={clsx('hero__subtitle', 'subtitle-font')}>
-          Suzhou Zhiyi
+          WeTCM
         </p>
         
         {/* modification end */}
