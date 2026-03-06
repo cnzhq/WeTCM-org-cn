@@ -2,7 +2,7 @@
 slug: 2026-03-02-a-half-day-with-death
 title: 与死神共饮的半日
 authors: Swen
-tags: [原创]
+tags: [ori]
 date: 2026-03-02
 ---
 

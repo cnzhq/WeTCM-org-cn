@@ -17,3 +17,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+ori:
+  label: 原创
+  permalink: /original
+  description: 本章的原创内容
