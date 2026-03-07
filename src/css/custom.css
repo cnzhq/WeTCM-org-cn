@@ -148,3 +148,13 @@
 .markdown h2 { font-size: 1.75rem; }
 .markdown h3 { font-size: 1.4rem; }
 */
+
+
+/* Twemoji 全局排版修复 */
+img.emoji {
+  height: 1.2em; /* 高度与当前字号保持一致 */
+  width: 1.2em;
+  margin: 0 .05em 0 .1em; /* 左右留出一点点微小的呼吸空间 */
+  vertical-align: -0.1em; /* 稍微下沉一点，确保和中文字符的基线对齐 */
+  pointer-events: none; /* 防止用户不小心拖拽图片 */
+}

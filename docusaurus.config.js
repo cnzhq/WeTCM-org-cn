@@ -189,6 +189,10 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+    // 这是twemoji的客户端模块配置
+      clientModules: [
+    './src/clientModules/twemoji.ts',
+  ],
 };
 
 export default config;
