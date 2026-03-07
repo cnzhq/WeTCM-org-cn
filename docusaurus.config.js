@@ -164,25 +164,37 @@ const config = {
           },
         ],
         
-        copyright: `Copyright © ${new Date().getFullYear()} WeTCM<br>
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
-        <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" alt="知识共享署名-相同方式共享" width="132" height="46.5" style="margin-top: 10px;" /></a><br>
-        本站的全部文字在<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"
-        rel="noopener noreferrer">CC BY-SA 4.0</a>协议之条款下提供，附加条款亦可能应用<br>
-        本站不提供任何治疗内容，如有不适请咨询您的医师<br>
-        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+        copyright: 
+          `Copyright © ${new Date().getFullYear()} WeTCM
+          <br>
+
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" title="这是一个CC BY-SA 4.0协议的标志" text-decoration: none;>
+            <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" alt="知识共享署名-相同方式共享" width="132" height="46.5" style="margin-top: 10px;" text-decoration: none;>
+          </a>
+          <br>
+
+          本站的全部文字在
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+            CC BY-SA 4.0
+          </a>
+          协议之条款下提供，附加条款亦可能应用<br>
+
+          本站不提供任何治疗内容，如有不适请咨询您的医师<br>
+
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
             苏ICP备2024061225号-2
           </a>
-          <img src="/img/Police.svg" alt="公安备案标志" style="width:18px;height:18px;
-          margin-right:2px;margin-left:8px;vertical-align: -3px"/>
-         <a href="https://beian.mps.gov.cn/#/query/webSearch?code=32050902103224" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-        苏公网安备32050902103224号
-          </a><br>
+          <img src="/img/Police.svg" alt="公安备案标志" style="width:18px;height:18px;margin-right:2px;margin-left:8px;vertical-align: -3px"/>
+          <a href="https://beian.mps.gov.cn/#/query/webSearch?code=32050902103224" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+            苏公网安备32050902103224号
+          </a>
+          <br>
+
           Powered by
           <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
             Docusaurus
           </a>
-          `,
+            `,
       },
       prism: {
         theme: prismThemes.github,
