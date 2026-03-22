@@ -20,6 +20,11 @@
      clamp(最小值, 视口宽度比例, 最大值)
   */
   --hero-base-size: clamp(2rem, 5.5vw, 6rem);
+  
+  /* 【新增配置】：全局基础字体栈 */
+  /* 逻辑：英文优先尝试 Georgia，如果没有则降级；中文遇到 Georgia 不认识，会自动顺延给后面的 Noto Serif SC 或系统自带字体 */
+  --ifm-font-family-base: 'Georgia', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
+
 }
 
 /* 暗黑模式配色 */
