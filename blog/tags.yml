@@ -47,3 +47,8 @@ beta:
   label: 测试
   permalink: /beta
   description: 测试相关的内容
+
+fiction:
+  label: 小说
+  permalink: /fiction
+  description: 小说！小说！
