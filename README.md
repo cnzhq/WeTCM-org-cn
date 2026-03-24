@@ -1,45 +1,10 @@
 # 关于网站
-该网站给予Meta的[Docusaurus](https://docusaurus.io/)软件开发而来。
+该网站基于Meta公司的[Docusaurus](https://docusaurus.io/)项目开发而来。
 
 这是本人的第一次尝试网站开发。
-# Website
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+## 实现原理
+Markdown文本->GitHub Pull->GitHub Actions->中国大陆服务器部署
 
-## Installation
-
-```bash
-yarn
-```
-
-## Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 组成人员
+本网站并非我一人开发。由多位好友共同建设而成。
