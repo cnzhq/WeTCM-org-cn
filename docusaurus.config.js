@@ -124,11 +124,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: '文档',
+            title: '文献',
             items: [
               {
-                label: '指南',
+                label: '文档',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Blog',
+                to: '/blog',
               },
             ],
           },
@@ -137,15 +141,15 @@ const config = {
             items: [
               {
                 label: '链接1',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://www.example.com/',
               },
               {
                 label: '链接2',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://www.example.com/',
               },
               {
                 label: '链接3',
-                href: 'https://x.com/docusaurus',
+                href: 'https://www.example.com/',
               },
             ],
           },
@@ -153,8 +157,8 @@ const config = {
             title: '更多',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: '时间校对',
+                to: '/time',
               },
               {
                 label: 'GitHub',
