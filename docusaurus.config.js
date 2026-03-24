@@ -37,10 +37,19 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans', 'en'],
+    locales: ['zh-Hans', 'en', 'zh-Hant'], // 加入 zh-Hant (繁体中文)
     localeConfigs: {
-      en: {
-        htmlLang: 'en-GB', // 英文的 HTML 语言标签
+      'zh-Hans': {
+        htmlLang: 'zh-CN',
+        path: 'zh-Hans', // 【核心操作】让默认语言也生成在 /zh-Hans/ 目录下，而不是根目录
+      },
+      'zh-Hant': {
+        htmlLang: 'zh-TW',
+        path: 'zh-Hant', // 繁体中文路径
+      },
+      'en': {
+        htmlLang: 'en-GB',
+        path: 'en', // 英文路径
       },
     },
   },
