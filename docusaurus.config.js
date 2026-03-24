@@ -20,15 +20,15 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://cnzhq-website.vercel.app',
+  url: 'https://wetcm.org.cn',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'cnzhq', // Usually your GitHub org/user name.
+  projectName: 'WeTCM-org-cn', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
