@@ -87,6 +87,18 @@ const config = {
         onUntruncatedBlogPosts: 'warn',
       },
     ],
+    // 小说专区 - 独立的 docs 实例
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'novel',
+        path: 'novel',
+        routeBasePath: 'novel',
+        sidebarPath: './sidebarsNovel.js',
+        editUrl:
+          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
   ],
 
   themeConfig:
@@ -114,7 +126,7 @@ const config = {
           },
 
           {to: '/blog', label: '博客', position: 'left'},
-          {to: '/docs/novel/intro', label: '文学', position: 'left'},
+          {to: '/novel/intro', label: '文学', position: 'left'},
           {
             to: '/time',      // 对应 src/pages/about.md 的文件名
             label: 'UTC时间',  // 导航栏上显示的文字，您可以随意修改

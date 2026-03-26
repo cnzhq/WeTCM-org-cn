@@ -1,5 +1,5 @@
 ---
-slug: yayan's-fiction-1-3
+slug: yayan-fiction-3
 title: 未命名小说 第三章
 authors: yayan
 tags: [ori,fiction]
