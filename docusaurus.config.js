@@ -83,10 +83,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false, // 禁用默认博客，使用下面的插件配置
         theme: {
@@ -111,8 +107,6 @@ const config = {
           type: ['rss', 'atom'],
           xslt: true,
         },
-        editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         onInlineTags: 'warn',
         onInlineAuthors: 'warn',
         onUntruncatedBlogPosts: 'warn',
@@ -126,8 +120,16 @@ const config = {
         path: 'novel',
         routeBasePath: 'novel',
         sidebarPath: './sidebarsNovel.js',
-        editUrl:
-          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
+    // 隐藏文档专区 - 独立的 docs 实例，不在导航栏显示
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'book',
+        path: 'book',
+        routeBasePath: 'book',
+        sidebarPath: './sidebarsBook.js',
       },
     ],
   ],
