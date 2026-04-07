@@ -42,7 +42,8 @@
    2. 字体引入 (Fonts)
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700&display=swap');
+/* 使用国内镜像加速 Google Fonts 加载 */
+@import url('https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@300;400;700&display=swap');
 
 
 /* 引入全新的 CMSFont 字体 */
@@ -76,17 +77,16 @@
   width: 100%;
 }
 
-/* 主标题 */
+/* 主标题 - 优化字体回退栈 */
 .hero__title {
-  font-family: 'CMSFont', serif;
+  font-family: 'CMSFont', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', 'Source Han Serif SC', serif;
   font-weight: bold !important;
-  font-size: 5rem
-
+  font-size: 5rem;
 }
 
-/* 副标题 */
+/* 副标题 - 优化字体回退栈 */
 .hero__subtitle {
-  font-family: 'CMSFont', serif;
+  font-family: 'CMSFont', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', 'Source Han Serif SC', serif;
   font-weight: bold !important;
   text-transform: uppercase;
   font-size: 2rem;
@@ -98,19 +98,19 @@
    ========================================= */
 
 .navbar__title {
-  font-family: 'CMSFont', serif;
+  font-family: 'CMSFont', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', 'Source Han Serif SC', serif;
   font-weight: bold !important;
   letter-spacing: 0em;
   font-size: 1.3rem;
 }
 
 .title-font {
-  font-family: 'CMSFont', serif;
+  font-family: 'CMSFont', 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', 'Source Han Serif SC', serif;
   font-weight: bold !important;
 }
 
 .subtitle-font {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', 'Source Han Serif SC', serif;
   font-weight: 300;
   letter-spacing: 0.04em;
 }
