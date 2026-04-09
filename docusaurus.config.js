@@ -132,6 +132,18 @@ const config = {
         sidebarPath: './sidebarsBook.js',
       },
     ],
+    // 重定向配置：访问 /book 自动跳转到 /book/intro
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/book',
+            to: '/book/intro',
+          },
+        ],
+      },
+    ],
   ],
 
   themeConfig:
