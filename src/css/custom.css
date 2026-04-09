@@ -204,3 +204,30 @@ img.emoji {
 }
 
 */
+
+/* =========================================
+   5. 表格居中样式
+   ========================================= */
+
+/* 表格整体居中 */
+.center-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: auto;
+}
+
+/* 表头和单元格文字居中 */
+.center-table th,
+.center-table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* 表头背景色 */
+.center-table thead th {
+  background-color: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+}
+
