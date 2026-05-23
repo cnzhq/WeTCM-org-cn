@@ -36,7 +36,12 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            点此开始
+            访问文档
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/blog">
+            访问博客
           </Link>
         </div>
       </div>

@@ -271,6 +271,12 @@ const config = {
           <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
             Docusaurus
           </a>
+          <br>
+
+          Fonts by
+          <a href="https://hyperos.mi.com/font/en/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+            MiSans
+          </a>
             `,
       },
       prism: {
