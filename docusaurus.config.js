@@ -247,8 +247,10 @@ const config = {
           `Copyright © ${new Date().getFullYear()} WeTCM
           <br>
 
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" title="这是一个CC BY-SA 4.0协议的标志" style="text-decoration: none;">
-            <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" alt="知识共享署名-相同方式共享" width="132" height="46.5" style="margin-top: 10px;">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" title="这是一个CC BY-SA 4.0协议的标志" style="display: inline-flex; align-items: center; gap: 4px; margin-top: 4px; text-decoration: none; line-height: 1;">
+            <img src="/img/cc-icons-svg/cc.svg" alt="CC" width="32" height="32" style="display: block;">
+            <img src="/img/cc-icons-svg/by.svg" alt="BY" width="32" height="32" style="display: block;">
+            <img src="/img/cc-icons-svg/sa.svg" alt="SA" width="32" height="32" style="display: block;">
           </a>
           <br>
 
