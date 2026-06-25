@@ -187,12 +187,6 @@ const config = {
             label: '百科',
             position: 'left',
           },
-
-          {
-            href: 'https://www.njucm.edu.cn',
-            label: '友情链接',
-            position: 'right',
-          },
         ],
       },
       footer: {
@@ -206,7 +200,7 @@ const config = {
                 to: '/docs/intro',
               },
               {
-                label: 'Blog',
+                label: '博客',
                 to: '/blog',
               },
             ],
@@ -234,6 +228,10 @@ const config = {
               {
                 label: '时间校对',
                 to: '/time',
+              },
+              {
+                label: '友情链接',
+                to: '/links',
               },
               {
                 label: 'GitHub',
