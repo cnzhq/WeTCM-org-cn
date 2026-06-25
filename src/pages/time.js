@@ -114,9 +114,6 @@ export default function TimePage() {
   return (
     <Layout title="标准网络时钟" description="Network Time Protocol Clock">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet" />
         <style>{`
           @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
         `}</style>
@@ -195,7 +192,7 @@ const timeWrapperStyle = {
   justifyContent: 'center',
   fontSize: '3.5rem',
   fontWeight: 'bold',
-  fontFamily: "'Noto Serif SC', 'Source Han Serif SC', serif",
+  fontFamily: "'CMSFont', 'MiSans', 'Source Han Serif SC', serif",
   margin: '1rem 0',
   color: 'var(--ifm-color-primary)',
   fontVariantNumeric: 'tabular-nums',
@@ -218,7 +215,7 @@ const msDigitStyle = {
   width: '80px', 
   textAlign: 'left', 
   opacity: 0.8,
-  fontFamily: "'Noto Serif SC', serif" 
+  fontFamily: "'CMSFont', 'MiSans', serif" 
 };
 
 const dateStyle = {
@@ -232,5 +229,5 @@ const offsetStyle = {
   fontWeight: 'bold',
   color: 'var(--ifm-color-primary)',
   margin: '0.5rem 0',
-  fontFamily: "'Noto Serif SC', sans-serif"
+  fontFamily: "'MiSans', 'PingFang SC', 'Microsoft YaHei', sans-serif"
 };
