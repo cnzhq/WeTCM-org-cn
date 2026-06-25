@@ -116,10 +116,11 @@
 /* 引入全新的 CMSFont 字体 */
 @font-face {
   font-family: 'CMSFont'; 
-  src: url('/fonts/CMSFont-Bold.woff2') format('woff2'); 
+  src: url('/fonts/CMSFont-Bold.subset.woff2') format('woff2'); 
   font-display: swap;
   font-weight: bold; 
   font-style: normal;
+  unicode-range: U+7687, U+5BB6, U+592A, U+533B, U+9662;
 }
 /* 以下注释为先前的字体引入，留着备用 */
 /*

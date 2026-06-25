@@ -27,17 +27,6 @@ const config = {
 
   // 字体优化：预加载首屏关键本地字体
   headTags: [
-    // 预加载本地关键字体 - CMSFont-Bold.woff2
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        href: '/fonts/CMSFont-Bold.woff2',
-        as: 'font',
-        type: 'font/woff2',
-        crossorigin: 'anonymous',
-      },
-    },
     {
       tagName: 'link',
       attributes: {
