@@ -25,7 +25,7 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // 字体优化：预加载首屏关键本地字体
+  // Preload only the regular MiSans face used by first-screen body text.
   headTags: [
     {
       tagName: 'link',
@@ -38,14 +38,25 @@ const config = {
       },
     },
     {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        href: '/fonts/misans/MiSans-Bold.woff2',
-        as: 'font',
-        type: 'font/woff2',
-        crossorigin: 'anonymous',
-      },
+      tagName: 'style',
+      attributes: {},
+      innerHTML: `
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/misans/MiSans-Regular.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/misans/MiSans-Bold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+`,
     },
   ],
 
@@ -236,18 +247,18 @@ const config = {
           `Copyright © ${new Date().getFullYear()} WeTCM
           <br>
 
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" title="这是一个CC BY-SA 4.0协议的标志" text-decoration: none;>
-            <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" alt="知识共享署名-相同方式共享" width="132" height="46.5" style="margin-top: 10px;" text-decoration: none;>
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" title="这是一个CC BY-SA 4.0协议的标志" style="text-decoration: none;">
+            <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" alt="知识共享署名-相同方式共享" width="132" height="46.5" style="margin-top: 10px;">
           </a>
           <br>
 
           本站的全部文字在
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
             CC BY-SA 4.0
           </a>
           协议之条款下提供，附加条款亦可能应用<br>
 
-          本站不提供任何治疗内容，如有不适请咨询<a href="https://zgcx.nhc.gov.cn/doctor" target="_blank"rel="noopener noreferrer" style="color: inherit; text-decoration: none;">您的医师
+          本站不提供任何治疗内容，如有不适请咨询<a href="https://zgcx.nhc.gov.cn/doctor" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">您的医师
           </a>
           <br>
 

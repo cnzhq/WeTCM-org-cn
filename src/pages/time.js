@@ -192,7 +192,7 @@ const timeWrapperStyle = {
   justifyContent: 'center',
   fontSize: '3.5rem',
   fontWeight: 'bold',
-  fontFamily: "'CMSFont', 'MiSans', 'Source Han Serif SC', serif",
+  fontFamily: "'CMSFont', 'MiSans', 'PingFang SC', 'Microsoft YaHei', 'Source Han Serif SC', serif",
   margin: '1rem 0',
   color: 'var(--ifm-color-primary)',
   fontVariantNumeric: 'tabular-nums',
@@ -215,7 +215,7 @@ const msDigitStyle = {
   width: '80px', 
   textAlign: 'left', 
   opacity: 0.8,
-  fontFamily: "'CMSFont', 'MiSans', serif" 
+  fontFamily: "'CMSFont', 'MiSans', 'PingFang SC', 'Microsoft YaHei', serif" 
 };
 
 const dateStyle = {
@@ -229,5 +229,5 @@ const offsetStyle = {
   fontWeight: 'bold',
   color: 'var(--ifm-color-primary)',
   margin: '0.5rem 0',
-  fontFamily: "'MiSans', 'PingFang SC', 'Microsoft YaHei', sans-serif"
+  fontFamily: "'MiSans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif"
 };

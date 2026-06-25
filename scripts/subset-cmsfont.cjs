@@ -3,7 +3,7 @@ const path = require('path');
 const subsetFont = require('subset-font');
 
 const projectRoot = path.resolve(__dirname, '..');
-const sourcePath = path.join(projectRoot, 'static', 'fonts', 'CMSFont-Bold.woff2');
+const sourcePath = path.join(projectRoot, 'scripts', 'font-sources', 'CMSFont-Bold.woff2');
 const outputPath = path.join(projectRoot, 'static', 'fonts', 'CMSFont-Bold.subset.woff2');
 const text = '皇家太医院';
 
