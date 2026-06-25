@@ -171,7 +171,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '指南',
+            label: '文档',
           },
 
           {to: '/blog', label: '博客', position: 'left'},
