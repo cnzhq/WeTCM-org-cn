@@ -21,7 +21,7 @@ function HomepageHeader() {
         
         {/* 2. 副标题 */}
         <p className={clsx('hero__subtitle', 'subtitle-font')}>
-          Royal Medical Academy
+          WeTCM
         </p>
         
         {/* modification end */}
