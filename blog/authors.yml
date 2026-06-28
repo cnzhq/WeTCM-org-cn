@@ -42,3 +42,10 @@ yayan:
   page: true
   socials:
     github: AmadeusCCC
+
+repost:
+  name: 转载用户
+  title: 转载用户，详情请见转载文章
+  url: https://wetcm.org.cn
+  image_url: /img/default-user-pic.png
+  page: true
