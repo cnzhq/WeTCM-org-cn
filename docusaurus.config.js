@@ -86,7 +86,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: './config/sidebars/docs.js',
         },
         blog: false, // 禁用默认博客，使用下面的插件配置
         theme: {
@@ -123,7 +123,7 @@ const config = {
         id: 'literature',
         path: 'literature',
         routeBasePath: 'literature',
-        sidebarPath: './sidebarsLiterature.js',
+        sidebarPath: './config/sidebars/literature.js',
       },
     ],
     // 隐藏文档专区 - 独立的 docs 实例，不在导航栏显示
@@ -133,7 +133,7 @@ const config = {
         id: 'book',
         path: 'book',
         routeBasePath: 'book',
-        sidebarPath: './sidebarsBook.js',
+        sidebarPath: './config/sidebars/book.js',
       },
     ],
     // 重定向配置：访问 /book 自动跳转到 /book/intro
