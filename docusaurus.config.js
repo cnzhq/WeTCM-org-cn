@@ -120,10 +120,10 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'novel',
-        path: 'novel',
-        routeBasePath: 'novel',
-        sidebarPath: './sidebarsNovel.js',
+        id: 'literature',
+        path: 'literature',
+        routeBasePath: 'literature',
+        sidebarPath: './sidebarsLiterature.js',
       },
     ],
     // 隐藏文档专区 - 独立的 docs 实例，不在导航栏显示
@@ -175,7 +175,7 @@ const config = {
           },
 
           {to: '/blog', label: '博客', position: 'left'},
-          {to: '/novel/intro', label: '文学', position: 'left'},
+          {to: '/literature/intro', label: '文学', position: 'left'},
           {
             to: '/time',      // 对应 src/pages/about.md 的文件名
             label: 'UTC时间',  // 导航栏上显示的文字，您可以随意修改
@@ -201,7 +201,7 @@ const config = {
               },
               {
                 label: '文学',
-                to: '/novel/intro',
+                to: '/literature/intro',
               },
               {
                 label: '博客',
