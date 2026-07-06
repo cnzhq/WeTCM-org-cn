@@ -226,3 +226,216 @@ img.emoji {
   font-weight: 600;
 }
 
+/* =========================================
+   Apple 风格自定义页尾
+   ========================================= */
+
+.wetcmFooter {
+  background: #f5f5f7;
+  color: #6e6e73;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.wetcmFooterInner {
+  width: min(100% - 32px, 980px);
+  margin: 0 auto;
+  padding: 18px 0 22px;
+}
+
+.wetcmFooter a {
+  color: #424245;
+  text-decoration: none;
+}
+
+.wetcmFooter a:hover {
+  color: #1d1d1f;
+  text-decoration: underline;
+}
+
+.wetcmFooterNotes {
+  border-bottom: 1px solid #d2d2d7;
+  padding-bottom: 12px;
+}
+
+.wetcmFooterNotes h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.wetcmFooterNotes p {
+  margin: 0 0 0.55rem;
+}
+
+.wetcmFooterNotes p:last-child {
+  margin-bottom: 0;
+}
+
+.wetcmFooterDirectory {
+  padding: 18px 0 10px;
+}
+
+.wetcmFooterDesktopColumns {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 28px;
+}
+
+.wetcmFooterMobileColumns {
+  display: none;
+}
+
+.wetcmFooterColumn h2,
+.wetcmFooterDisclosure summary {
+  margin: 0 0 0.65rem;
+  color: #1d1d1f;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.wetcmFooterColumn ul,
+.wetcmFooterDisclosure ul,
+.wetcmFooterLegal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wetcmFooterColumn li {
+  margin: 0 0 0.48rem;
+}
+
+.wetcmFooterMore {
+  border-bottom: 1px solid #d2d2d7;
+  padding: 4px 0 9px;
+}
+
+.wetcmFooterLegal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: space-between;
+  padding-top: 9px;
+}
+
+.wetcmFooterLegal p {
+  margin: 0;
+}
+
+.wetcmFooterLegal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.wetcmFooterLegal li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.wetcmFooterLegal li + li::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin: 0 9px;
+  background: #d2d2d7;
+}
+
+@media screen and (max-width: 996px) {
+  .wetcmFooterInner {
+    width: min(100% - 28px, 980px);
+  }
+
+  .wetcmFooterDesktopColumns {
+    display: none;
+  }
+
+  .wetcmFooterMobileColumns {
+    display: block;
+  }
+
+  .wetcmFooterDirectory {
+    padding: 8px 0;
+  }
+
+  .wetcmFooterDisclosure {
+    border-bottom: 1px solid #d2d2d7;
+  }
+
+  .wetcmFooterDisclosure summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 38px;
+    margin: 0;
+    list-style: none;
+  }
+
+  .wetcmFooterDisclosure summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .wetcmFooterDisclosure summary::after {
+    content: '+';
+    color: #6e6e73;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .wetcmFooterDisclosure[open] summary::after {
+    content: '-';
+  }
+
+  .wetcmFooterDisclosure ul {
+    padding: 0 0 12px 14px;
+  }
+
+  .wetcmFooterDisclosure li {
+    margin: 0 0 0.62rem;
+  }
+
+  .wetcmFooterLegal {
+    display: block;
+  }
+
+  .wetcmFooterLegal p {
+    margin-bottom: 0.45rem;
+  }
+}
+
+[data-theme='dark'] .wetcmFooter {
+  background: #161617;
+  color: #a1a1a6;
+}
+
+[data-theme='dark'] .wetcmFooter a {
+  color: #d2d2d7;
+}
+
+[data-theme='dark'] .wetcmFooter a:hover {
+  color: #f5f5f7;
+}
+
+[data-theme='dark'] .wetcmFooterNotes,
+[data-theme='dark'] .wetcmFooterMore,
+[data-theme='dark'] .wetcmFooterDisclosure {
+  border-color: #424245;
+}
+
+[data-theme='dark'] .wetcmFooterColumn h2,
+[data-theme='dark'] .wetcmFooterDisclosure summary {
+  color: #f5f5f7;
+}
+
+[data-theme='dark'] .wetcmFooterLegal li + li::before {
+  background: #424245;
+}
+
