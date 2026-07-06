@@ -44,7 +44,7 @@
 
 .heroCopy h1 {
   margin: 0;
-  font-family: 'MiSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'CMSFont', 'MiSans', 'PingFang SC', 'Microsoft YaHei', 'Source Han Serif SC', serif;
   font-size: clamp(3.4rem, 9vw, 7.5rem);
   font-weight: 800;
   line-height: 1.02;
