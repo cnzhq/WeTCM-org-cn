@@ -164,6 +164,12 @@
   min-width: 0;
 }
 
+.wetcmAppleNavStart {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
 .wetcmAppleNavLink {
   display: inline-flex;
   align-items: center;
@@ -271,6 +277,10 @@
   display: none;
 }
 
+.wetcmWikiTocToggle {
+  display: none;
+}
+
 @media screen and (max-width: 996px) {
   .wetcmAppleNavInner {
     width: min(100% - 28px, 1024px);
@@ -318,6 +328,76 @@
   .wetcmAppleNavOpen {
     overflow: hidden;
   }
+
+  .wetcmWikiTocToggle {
+    position: fixed;
+    top: 52px;
+    left: max(14px, calc((100vw - 680px) / 2));
+    z-index: calc(var(--ifm-z-index-fixed) + 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 6px;
+    padding: 0 10px;
+    background: rgba(251, 251, 253, 0.92);
+    backdrop-filter: saturate(180%) blur(16px);
+    color: #202122;
+    font-family: 'MiSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition:
+      opacity 260ms ease,
+      transform 260ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .wetcmWikiTocToggleVisible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .wetcmWikiTocToggleHidden {
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+  }
+
+  .wetcmWikiTocToggle[aria-expanded='true'] {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.22);
+  }
+
+  .wetcmWikiTocIcon {
+    display: inline-grid;
+    gap: 2px;
+    width: 14px;
+  }
+
+  .wetcmWikiTocIcon span {
+    display: block;
+    height: 1.5px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .navbar-sidebar {
+    top: 44px;
+    height: calc(100vh - 44px);
+    z-index: calc(var(--ifm-z-index-fixed) + 2);
+  }
+
+  .navbar-sidebar__backdrop {
+    top: 44px;
+    height: calc(100vh - 44px);
+    z-index: calc(var(--ifm-z-index-fixed) + 1);
+  }
 }
 
 [data-theme='dark'] .navbar {
@@ -340,6 +420,17 @@
 
 [data-theme='dark'] .wetcmAppleNavMobile .wetcmAppleNavLink {
   color: #f5f5f7;
+}
+
+[data-theme='dark'] .wetcmWikiTocToggle {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(22, 22, 23, 0.92);
+  color: #f5f5f7;
+}
+
+[data-theme='dark'] .wetcmWikiTocToggle[aria-expanded='true'] {
+  background: #1d1d1f;
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 .title-font {
