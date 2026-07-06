@@ -200,25 +200,12 @@ const config = {
                 to: '/docs/intro',
               },
               {
+                label: '文学',
+                to: '/novel/intro',
+              },
+              {
                 label: '博客',
                 to: '/blog',
-              },
-            ],
-          },
-          {
-            title: '关于我们',
-            items: [
-              {
-                label: '链接1',
-                href: 'https://www.example.com/',
-              },
-              {
-                label: '链接2',
-                href: 'https://www.example.com/',
-              },
-              {
-                label: '链接3',
-                href: 'https://www.example.com/',
               },
             ],
           },
