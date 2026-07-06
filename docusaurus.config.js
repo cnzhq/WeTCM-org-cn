@@ -167,26 +167,16 @@ const config = {
         },
         
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '文档',
-          },
-
+          {to: '/docs/intro', label: '文档', position: 'left'},
           {to: '/blog', label: '博客', position: 'left'},
           {to: '/literature/intro', label: '文学', position: 'left'},
-          {
-            to: '/time',      // 对应 src/pages/about.md 的文件名
-            label: 'UTC时间',  // 导航栏上显示的文字，您可以随意修改
-            position: 'left',  // 放左边
-          },
-
-          {
-            href: 'https://wiki.wetcm.org.cn',
-            label: '百科',
-            position: 'left',
-          },
+          {href: 'https://wiki.wetcm.org.cn', label: '百科', position: 'left'},
+          {to: '/book/intro', label: '中医基础', position: 'left'},
+          {to: '/docs/university/ntu-interview', label: '大学资料', position: 'left'},
+          {to: '/time', label: '时间校对', position: 'left'},
+          {to: '/links', label: '友情链接', position: 'left'},
+          {to: '/blog/archive', label: '归档', position: 'left'},
+          {to: '/blog/tags', label: '标签', position: 'left'},
         ],
       },
       footer: {},
