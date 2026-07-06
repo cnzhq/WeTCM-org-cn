@@ -94,9 +94,9 @@ export default function Home() {
 
         <section className={`${styles.statementSection} ${styles.fullBleed}`}>
           <div className={styles.statementCopy}>
-            <h2>少一点噪音，多一点秩序。</h2>
+            <h2>传承精华 守正创新</h2>
             <p>
-              首页不堆满信息，而是把最重要的入口放在最清楚的位置：学习、记录、阅读、延伸。
+              加快推进中医药现代化、产业化，坚持中西医并重，推动中医药和西医药相互补充、协调发展，推动中医药事业和产业高质量发展，推动中医药走向世界，充分发挥中医药防病治病的独特优势和作用，为建设健康中国、实现中华民族伟大复兴的中国梦贡献力量。
             </p>
           </div>
         </section>
