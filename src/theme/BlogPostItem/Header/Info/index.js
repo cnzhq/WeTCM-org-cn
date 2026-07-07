@@ -4,6 +4,7 @@ import {translate} from '@docusaurus/Translate';
 import {usePluralForm} from '@docusaurus/theme-common';
 import {useDateTimeFormat} from '@docusaurus/theme-common/internal';
 import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
+import formatChineseGroupedNumber from '@site/src/utils/formatChineseGroupedNumber';
 import styles from './styles.module.css';
 
 function useReadingTimePlural() {
@@ -38,12 +39,8 @@ function Spacer() {
   return <>{' · '}</>;
 }
 
-function formatNumber(value) {
-  return new Intl.NumberFormat('zh-Hans').format(value);
-}
-
 function WordCount({wordCount}) {
-  return <>约 {formatNumber(wordCount)} 字</>;
+  return <>约 {formatChineseGroupedNumber(wordCount)} 字</>;
 }
 
 export default function BlogPostItemHeaderInfo({className}) {

@@ -6,6 +6,7 @@ import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
+import formatChineseGroupedNumber from '@site/src/utils/formatChineseGroupedNumber';
 import styles from './styles.module.css';
 
 function useSyntheticTitle() {
@@ -113,10 +114,6 @@ function LiteratureAuthors() {
   );
 }
 
-function formatNumber(value) {
-  return new Intl.NumberFormat('zh-Hans').format(value);
-}
-
 function LiteratureMetrics() {
   const {metadata} = useDoc();
   const pluginData = usePluginData('literature-authors');
@@ -134,11 +131,11 @@ function LiteratureMetrics() {
     <div className={styles.metrics}>
       {metrics.readingTime && (
         <>
-          <span>约 {formatNumber(metrics.readingTime)} 分钟阅读</span>
+          <span>约 {formatChineseGroupedNumber(metrics.readingTime)} 分钟阅读</span>
           <span aria-hidden="true"> · </span>
         </>
       )}
-      <span>约 {formatNumber(metrics.wordCount)} 字</span>
+      <span>约 {formatChineseGroupedNumber(metrics.wordCount)} 字</span>
     </div>
   );
 }
