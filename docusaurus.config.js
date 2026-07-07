@@ -146,6 +146,10 @@ const config = {
             from: '/book',
             to: '/book/intro',
           },
+          {
+            from: '/book/category/中医基础理论',
+            to: '/book/category/basic-theory-of-tcm',
+          },
         ],
       },
     ],

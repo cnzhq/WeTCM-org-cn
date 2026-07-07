@@ -1,5 +1,5 @@
 yangshun:
-  name: Yangshun Tay
+  name: Yangshun Tay（缺省作者）
   title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
   url: https://linkedin.com/in/yangshun
   image_url: https://github.com/yangshun.png
@@ -11,7 +11,7 @@ yangshun:
     newsletter: https://www.greatfrontend.com
 
 slorber:
-  name: Sébastien Lorber
+  name: Sébastien Lorber（缺省作者）
   title: Docusaurus maintainer
   url: https://sebastienlorber.com
   image_url: https://github.com/slorber.png
@@ -26,7 +26,7 @@ slorber:
 
 Swen:
   name: 孙平先
-  title: Website Admin
+  title: 本站管理员
   url: https://wetcm.org.cn
   image_url: /img/swen_image.jpg
   page: true
@@ -36,16 +36,16 @@ Swen:
 
 yayan:
   name: 哑雁
-  title: Featured Writer and Commentator
+  title: 特约评论员、作家
   url: https://wetcm.org.cn
-  image_url: https://github.com/AmadeusCCC.png
+  image_url: /img/yayan.jpg
   page: true
   socials:
     github: AmadeusCCC
 
 repost:
   name: 转载用户
-  title: 转载用户，详情请见转载文章
+  title: 转载文章专用作者
   url: https://wetcm.org.cn
   image_url: /img/default-user-pic.png
   page: true

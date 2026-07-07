@@ -1,4 +1,8 @@
 {
   "label": "末来",
-  "position": 1
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "molai/intro"
+  }
 }
