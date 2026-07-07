@@ -10,6 +10,6 @@ sidebar_position: 0
 
 | 作品名称 | 作者 | 链接 | 其他  |
 |------|----|----|-----|
-| [末来](literature/molai/末来-01.md)   | 哑雁 | d  | ddd |
+| [末来](literature/molai/末来-01.md)   | 哑雁 | test1  | test2 |
 |      |    |    |     |
 |      |    |    |     |
