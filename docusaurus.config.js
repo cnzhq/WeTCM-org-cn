@@ -97,6 +97,7 @@ const config = {
   ],
 
   plugins: [
+    './plugins/literature-authors',
     // 主博客（正常博客）
     [
       '@docusaurus/plugin-content-blog',
