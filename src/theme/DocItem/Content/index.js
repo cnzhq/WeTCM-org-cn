@@ -113,6 +113,36 @@ function LiteratureAuthors() {
   );
 }
 
+function formatNumber(value) {
+  return new Intl.NumberFormat('zh-Hans').format(value);
+}
+
+function LiteratureMetrics() {
+  const {metadata} = useDoc();
+  const pluginData = usePluginData('literature-authors');
+
+  if (!isLiteratureDoc(metadata.source)) {
+    return null;
+  }
+
+  const metrics = pluginData?.literatureMetrics?.[metadata.source];
+  if (!metrics?.wordCount) {
+    return null;
+  }
+
+  return (
+    <div className={styles.metrics}>
+      {metrics.readingTime && (
+        <>
+          <span>约 {formatNumber(metrics.readingTime)} 分钟阅读</span>
+          <span aria-hidden="true"> · </span>
+        </>
+      )}
+      <span>约 {formatNumber(metrics.wordCount)} 字</span>
+    </div>
+  );
+}
+
 export default function DocItemContent({children}) {
   const syntheticTitle = useSyntheticTitle();
   return (
@@ -123,6 +153,7 @@ export default function DocItemContent({children}) {
         </header>
       )}
       <LiteratureAuthors />
+      <LiteratureMetrics />
       <MDXContent>{children}</MDXContent>
     </div>
   );

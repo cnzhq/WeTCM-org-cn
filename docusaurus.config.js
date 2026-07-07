@@ -5,6 +5,9 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import contentMetrics from './plugins/content-metrics.cjs';
+
+const {countContentWords} = contentMetrics;
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -115,6 +118,14 @@ const config = {
         onInlineTags: 'warn',
         onInlineAuthors: 'warn',
         onUntruncatedBlogPosts: 'warn',
+        processBlogPosts: async ({blogPosts}) =>
+          blogPosts.map((blogPost) => ({
+            ...blogPost,
+            metadata: {
+              ...blogPost.metadata,
+              wordCount: countContentWords(blogPost.content),
+            },
+          })),
       },
     ],
     // 小说专区 - 独立的 docs 实例

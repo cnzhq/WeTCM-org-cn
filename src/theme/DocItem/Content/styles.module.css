@@ -58,3 +58,9 @@
   color: var(--ifm-color-emphasis-600);
   font-size: 0.82rem;
 }
+
+.metrics {
+  margin: -1rem 0 1.75rem;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+}
