@@ -237,18 +237,45 @@
   line-height: 1.4;
 }
 
-.docsPanel::after {
-  content: '';
+.docsVisual {
   align-self: end;
   justify-self: center;
   width: min(86%, 880px);
   aspect-ratio: 2.2 / 1;
-  margin-bottom: -7%;
-  border-radius: 42px 42px 0 0;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.68) 1px, transparent 1px) 0 0 / 44px 44px,
-    linear-gradient(180deg, #1d1d1f 0%, #2f3642 100%);
-  box-shadow: 0 -18px 70px rgba(0, 0, 0, 0.15);
+  margin: 2.5rem 0 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(0.28rem, 0.9vw, 0.7rem);
+  padding-inline: clamp(0.4rem, 1.4vw, 1rem);
+}
+
+.docsVisual span {
+  flex: 1 1 0;
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 2vw, 1.35rem) 0.35rem;
+  border-radius: 0;
+  background: #111318;
+  color: #fff;
+  font-family: 'CMSFont', 'MiSans', 'PingFang SC', 'Microsoft YaHei', serif;
+  font-size: clamp(1.05rem, 2.1vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
+  text-align: center;
+  writing-mode: vertical-rl;
+  box-shadow: 0 -18px 70px rgba(0, 0, 0, 0.12);
+}
+
+.docsVisual span:first-child {
+  border-radius: 0 42px 42px 0;
+}
+
+.docsVisual span:last-child {
+  border-radius: 42px 0 0 42px;
 }
 
 .cardGrid {
@@ -420,9 +447,33 @@
     min-height: 0;
   }
 
-  .docsPanel::after {
-    border-radius: 28px 28px 0 0;
-    margin-bottom: -12%;
+  .docsVisual {
+    width: min(94%, 520px);
+    min-height: 230px;
+    aspect-ratio: auto;
+    gap: 0.25rem;
+    padding-inline: 0.2rem;
+    margin: 1.75rem 0 1.5rem;
+  }
+
+  .docsVisual span {
+    min-height: 200px;
+    padding: 0.85rem 0.2rem;
+    border-radius: 0;
+    font-size: clamp(0.92rem, 4.4vw, 1.25rem);
+    letter-spacing: 0.08em;
+  }
+
+  .docsVisual span:first-child {
+    border-radius: 0 28px 28px 0;
+  }
+
+  .docsVisual span:nth-child(n + 6) {
+    display: none;
+  }
+
+  .docsVisual span:nth-child(5) {
+    border-radius: 28px 0 0 28px;
   }
 }
 
@@ -445,6 +496,11 @@
 
 [data-theme='dark'] .statementSection {
   background: #111318;
+}
+
+[data-theme='dark'] .docsVisual span {
+  background: #f5f5f7;
+  color: #111318;
 }
 
 [data-theme='dark'] .widePanel,

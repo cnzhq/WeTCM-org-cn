@@ -56,11 +56,11 @@ function ShowcaseCard({title, subtitle, primaryLabel, primaryTo, tone}) {
         <p>{subtitle}</p>
         <CtaLinks primaryLabel={primaryLabel} primaryTo={primaryTo} />
       </div>
-      <div className={styles.cardVisual} aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </div>
+      {/* <div className={styles.cardVisual} aria-hidden="true">
+        <span> d1 </span>
+        <span> d2 </span>
+        <span> d3 </span>
+      </div> */}
     </article>
   );
 }
@@ -113,6 +113,18 @@ export default function Home() {
                 secondaryLabel="中医基础"
                 secondaryTo="/book/intro"
               />
+            </div>
+            <div className={styles.docsVisual} aria-hidden="true">
+              <span>阴阳者天地之道也</span>
+              <span>气血津液运行有常</span>
+              <span>望闻问切以辨寒热</span>
+              <span>君臣佐使各有所主</span>
+              <span>读书临证反复参详</span>
+              <span>经络脏腑互为表里</span>
+              <span>五运六气各有所纪</span>
+              <span>寒热虚实审证求因</span>
+              <span>升降出入无器不有</span>
+              <span>法随证立方从法出</span>
             </div>
           </article>
 
