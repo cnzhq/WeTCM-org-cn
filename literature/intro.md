@@ -1,4 +1,5 @@
 ---
+searchDate: 2026-03-26
 slug: intro
 title: 欢迎来到文学区
 sidebar_position: 0

@@ -5,7 +5,9 @@
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "docusaurus": "docusaurus",
+    "prestart": "node scripts/build-search-date-index.cjs",
     "start": "docusaurus start",
+    "prebuild": "node scripts/build-search-date-index.cjs",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -21,6 +23,7 @@
     "@docusaurus/plugin-client-redirects": "^3.10.0",
     "@docusaurus/preset-classic": "^3.10.0",
     "@docusaurus/theme-mermaid": "^3.10.0",
+    "@easyops-cn/docusaurus-search-local": "^0.55.2",
     "@giscus/react": "^3.1.0",
     "@mdx-js/react": "^3.0.0",
     "@twemoji/api": "^17.0.2",

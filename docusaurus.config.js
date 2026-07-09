@@ -5,9 +5,11 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import path from 'node:path';
 import contentMetrics from './plugins/content-metrics.cjs';
 
 const {countContentWords} = contentMetrics;
+const zhUserDictPath = path.resolve('./config/search/zh-user-dict.txt');
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -96,6 +98,37 @@ const config = {
           customCss: './src/css/custom.css',
         },
       }),
+    ],
+  ],
+
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en', 'zh'],
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: false,
+        docsRouteBasePath: ['/docs', '/literature', '/book'],
+        docsDir: ['docs', 'literature', 'book'],
+        blogRouteBasePath: '/blog',
+        blogDir: 'blog',
+        zhUserDictPath,
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        searchResultLimits: 10,
+        searchResultContextMaxLength: 120,
+        searchContextByPaths: [
+          {label: '文档', path: 'docs'},
+          {label: '博客', path: 'blog'},
+          {label: '文学', path: 'literature'},
+          {label: '图书', path: 'book'},
+        ],
+        useAllContextsWithNoSearchContext: true,
+        searchBarShortcut: true,
+        searchBarShortcutHint: false,
+      },
     ],
   ],
 

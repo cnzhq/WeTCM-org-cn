@@ -1,4 +1,5 @@
 ---
+searchDate: 2026-07-07
 title: 末来
 slug: /category/molai
 ---

@@ -101,45 +101,49 @@ export default function NavbarContent() {
     <>
       <div className="navbar__inner wetcmAppleNavInner">
         <div className="wetcmAppleNavStart">
-        <Link className="wetcmAppleNavBrand" to="/" aria-label={`${title} 首页`}>
-          {logoSrc ? (
-            <img
-              className="wetcmAppleNavLogo"
-              src={logoSrc}
-              alt={logo?.alt ?? title}
-              width="20"
-              height="20"
-            />
-          ) : null}
-          <span>{title}</span>
-        </Link>
-      </div>
+          <Link className="wetcmAppleNavBrand" to="/" aria-label={`${title} 首页`}>
+            {logoSrc ? (
+              <img
+                className="wetcmAppleNavLogo"
+                src={logoSrc}
+                alt={logo?.alt ?? title}
+                width="20"
+                height="20"
+              />
+            ) : null}
+            <span>{title}</span>
+          </Link>
+        </div>
 
-      <div className="wetcmAppleNavDesktop" aria-label="主要导航">
-        {navItems.map((item) => (
-          <NavbarLink key={`${item.label}-${item.to ?? item.href}`} item={item} />
-        ))}
-      </div>
+        <div className="wetcmAppleNavDesktop" aria-label="主要导航">
+          {navItems.map((item) => (
+            <NavbarLink key={`${item.label}-${item.to ?? item.href}`} item={item} />
+          ))}
+        </div>
 
-      <div className="wetcmAppleNavTools">
-        <span className="wetcmAppleNavSearch" aria-hidden="true" />
-        <NavbarColorModeToggle className="wetcmAppleNavThemeToggle" />
-        <button
-          className="wetcmAppleNavMenuButton"
-          type="button"
-          aria-label={menuOpen ? '关闭导航菜单' : '打开导航菜单'}
-          aria-expanded={menuOpen}
-          aria-controls="wetcm-apple-mobile-menu"
-          onClick={() => {
-            if (mobileSidebar.shown) {
-              mobileSidebar.toggle();
-            }
-            setMenuOpen((open) => !open);
-          }}>
-          <span />
-          <span />
-        </button>
-      </div>
+        <div className="wetcmAppleNavTools">
+          <Link
+            className="wetcmAppleNavSearchLink"
+            to="/advanced-search"
+            aria-label="打开高级搜索"
+          />
+          <NavbarColorModeToggle className="wetcmAppleNavThemeToggle" />
+          <button
+            className="wetcmAppleNavMenuButton"
+            type="button"
+            aria-label={menuOpen ? '关闭导航菜单' : '打开导航菜单'}
+            aria-expanded={menuOpen}
+            aria-controls="wetcm-apple-mobile-menu"
+            onClick={() => {
+              if (mobileSidebar.shown) {
+                mobileSidebar.toggle();
+              }
+              setMenuOpen((open) => !open);
+            }}>
+            <span />
+            <span />
+          </button>
+        </div>
 
         <div
           id="wetcm-apple-mobile-menu"

@@ -189,36 +189,46 @@
   gap: 10px;
 }
 
-.wetcmAppleNavSearch {
+.wetcmAppleNavSearchLink {
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 28px;
+  height: 28px;
   flex: 0 0 auto;
-  opacity: 0.74;
+  border-radius: 999px;
+  color: rgba(0, 0, 0, 0.74);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 }
 
-.wetcmAppleNavSearch::before {
+.wetcmAppleNavSearchLink::before {
   content: '';
   position: absolute;
-  left: 2px;
-  top: 2px;
-  width: 8px;
-  height: 8px;
-  border: 1.4px solid currentColor;
+  left: 7px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid currentColor;
   border-radius: 50%;
 }
 
-.wetcmAppleNavSearch::after {
+.wetcmAppleNavSearchLink::after {
   content: '';
   position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 5px;
-  height: 1.4px;
-  background: currentColor;
+  left: 16px;
+  top: 16px;
+  width: 6px;
+  height: 1.5px;
   border-radius: 999px;
+  background: currentColor;
   transform: rotate(45deg);
   transform-origin: left center;
+}
+
+.wetcmAppleNavSearchLink:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.06);
+  text-decoration: none;
 }
 
 .wetcmAppleNavThemeToggle {
@@ -288,8 +298,7 @@
     justify-content: space-between;
   }
 
-  .wetcmAppleNavDesktop,
-  .wetcmAppleNavSearch {
+  .wetcmAppleNavDesktop {
     display: none;
   }
 
@@ -412,6 +421,15 @@
 [data-theme='dark'] .wetcmAppleNavBrand:hover,
 [data-theme='dark'] .wetcmAppleNavLink:hover {
   color: #fff;
+}
+
+[data-theme='dark'] .wetcmAppleNavSearchLink {
+  color: rgba(245, 245, 247, 0.78);
+}
+
+[data-theme='dark'] .wetcmAppleNavSearchLink:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme='dark'] .wetcmAppleNavMobile {
@@ -772,4 +790,3 @@ img.emoji {
 [data-theme='dark'] .wetcmFooterLegal li + li::before {
   background: #424245;
 }
-
