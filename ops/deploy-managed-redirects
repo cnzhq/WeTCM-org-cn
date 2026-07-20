@@ -11,7 +11,6 @@ site_available=/etc/nginx/sites-available/managed-redirects.conf
 site_enabled=/etc/nginx/sites-enabled/managed-redirects.conf
 legacy_available=/etc/nginx/sites-available/zhq.info
 legacy_enabled=/etc/nginx/sites-enabled/zhq.info
-backup_file=$(mktemp)
 had_config=0
 disabled_legacy=0
 
@@ -21,6 +20,10 @@ for required_file in bootstrap.conf final.conf certificates.tsv; do
     exit 1
   fi
 done
+
+backup_file=$(mktemp)
+verification_headers=$(mktemp)
+verification_error=$(mktemp)
 
 if [[ -f "$site_available" ]]; then
   cp "$site_available" "$backup_file"
@@ -39,7 +42,7 @@ rollback() {
     ln -sfn "$legacy_available" "$legacy_enabled"
   fi
   nginx -t && systemctl reload nginx || true
-  rm -f "$backup_file"
+  rm -f "$backup_file" "$verification_headers" "$verification_error"
 }
 trap rollback ERR
 
@@ -96,11 +99,43 @@ nginx -t
 systemctl reload nginx
 
 while IFS=$'\t' read -r certificate_name domain_list; do
-  curl --fail --silent --show-error --head \
-    --resolve "$certificate_name:443:127.0.0.1" \
-    "https://$certificate_name/"
+  verified=0
+  for attempt in {1..15}; do
+    : > "$verification_headers"
+    : > "$verification_error"
+    echo "Verifying https://$certificate_name/ against local Nginx (attempt $attempt/15)..."
+    if curl \
+      --noproxy '*' \
+      --fail \
+      --silent \
+      --show-error \
+      --head \
+      --connect-timeout 2 \
+      --max-time 4 \
+      --dump-header "$verification_headers" \
+      --output /dev/null \
+      --resolve "$certificate_name:443:127.0.0.1" \
+      "https://$certificate_name/" \
+      2>"$verification_error"; then
+      verified=1
+      echo "Local HTTPS verification succeeded for $certificate_name:"
+      cat "$verification_headers"
+      break
+    fi
+
+    echo "Verification attempt $attempt failed for $certificate_name:" >&2
+    cat "$verification_error" >&2
+    if [[ $attempt -lt 15 ]]; then
+      sleep 1
+    fi
+  done
+
+  if [[ $verified -ne 1 ]]; then
+    echo "Local HTTPS verification failed for $certificate_name after 15 attempts." >&2
+    false
+  fi
 done < "$deploy_dir/certificates.tsv"
 
 trap - ERR
-rm -f "$backup_file"
+rm -f "$backup_file" "$verification_headers" "$verification_error"
 rm -rf "$deploy_dir"
