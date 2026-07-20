@@ -55,3 +55,16 @@ GitHub Actions 会自动校验、生成并部署 Nginx 配置；也可以在 Act
 ```bash
 npm run redirects:build
 ```
+
+## 服务器首次授权
+
+部署流程需要修改 Nginx 配置和签发证书。为了避免把 sudo 密码放进 GitHub
+Secrets，服务器只对一个固定的部署程序授予免密权限。首次部署时 SSH 登录服务器
+执行一次：
+
+```bash
+sudo bash /tmp/managed-redirects/install-redirect-deployer.sh
+```
+
+之后重新运行 GitHub Actions 即可。该授权只允许执行
+`/usr/local/sbin/deploy-managed-redirects`，不会授予任意免密 sudo 权限。

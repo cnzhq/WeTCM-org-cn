@@ -8,6 +8,7 @@ on:
     paths:
       - config/redirects.json
       - scripts/generate-redirect-nginx.cjs
+      - ops/deploy-managed-redirects
       - .github/workflows/configure-zhq-redirect.yml
 
 jobs:
@@ -30,104 +31,26 @@ jobs:
           target: "/tmp/managed-redirects"
           strip_components: 1
 
-      - name: Install configuration and certificates
+      - name: Upload one-time server setup files
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "ops/deploy-managed-redirects,ops/install-redirect-deployer.sh"
+          target: "/tmp/managed-redirects"
+          strip_components: 1
+
+      - name: Deploy redirects
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            set -eu
-
-            deploy_dir=/tmp/managed-redirects
-            site_available=/etc/nginx/sites-available/managed-redirects.conf
-            site_enabled=/etc/nginx/sites-enabled/managed-redirects.conf
-            legacy_available=/etc/nginx/sites-available/zhq.info
-            legacy_enabled=/etc/nginx/sites-enabled/zhq.info
-            backup_file=$(mktemp)
-            had_config=0
-            disabled_legacy=0
-
-            if sudo test -f "$site_available"; then
-              sudo cp "$site_available" "$backup_file"
-              had_config=1
+            if ! sudo -n /usr/local/sbin/deploy-managed-redirects; then
+              echo "Redirect deployer is not authorized yet." >&2
+              echo "SSH into the server once and run:" >&2
+              echo "  sudo bash /tmp/managed-redirects/install-redirect-deployer.sh" >&2
+              exit 1
             fi
-
-            rollback() {
-              echo "Deployment failed; restoring the previous Nginx state."
-              if [ "$had_config" -eq 1 ]; then
-                sudo cp "$backup_file" "$site_available"
-                sudo ln -sfn "$site_available" "$site_enabled"
-              else
-                sudo rm -f "$site_available" "$site_enabled"
-              fi
-              if [ "$disabled_legacy" -eq 1 ]; then
-                sudo ln -sfn "$legacy_available" "$legacy_enabled"
-              fi
-              sudo nginx -t && sudo systemctl reload nginx || true
-              rm -f "$backup_file"
-            }
-            trap rollback ERR
-
-            # Migrate the one-domain configuration created by the older workflow.
-            if sudo test -L "$legacy_enabled" && \
-               sudo grep -Fq 'return 302 https://wetcm.org.cn$request_uri;' "$legacy_available"; then
-              sudo rm -f "$legacy_enabled"
-              disabled_legacy=1
-            fi
-
-            sudo mkdir -p /var/www/certbot
-            sudo install -m 0644 "$deploy_dir/bootstrap.conf" "$site_available"
-            sudo ln -sfn "$site_available" "$site_enabled"
-            sudo nginx -t
-            sudo systemctl reload nginx
-
-            command -v certbot >/dev/null 2>&1
-            while IFS="$(printf '\t')" read -r certificate_name domain_list; do
-              certbot_domains=""
-              issue_certificate=0
-              expand_certificate=""
-              for domain in $domain_list; do
-                certbot_domains="$certbot_domains -d $domain"
-              done
-
-              certificate_path="/etc/letsencrypt/live/$certificate_name/fullchain.pem"
-              if ! sudo test -s "$certificate_path"; then
-                issue_certificate=1
-              else
-                current_names=$(sudo openssl x509 -in "$certificate_path" -noout -ext subjectAltName | \
-                  tr ',' '\n' | sed -n 's/^ *DNS://p')
-                for domain in $domain_list; do
-                  if ! printf '%s\n' "$current_names" | grep -Fxq "$domain"; then
-                    issue_certificate=1
-                    expand_certificate="--expand"
-                  fi
-                done
-              fi
-
-              if [ "$issue_certificate" -eq 1 ]; then
-                # Domains are strictly validated by the generator before upload.
-                sudo certbot certonly \
-                  --webroot \
-                  --webroot-path /var/www/certbot \
-                  --non-interactive \
-                  --agree-tos \
-                  --cert-name "$certificate_name" \
-                  $expand_certificate \
-                  $certbot_domains
-              fi
-            done < "$deploy_dir/certificates.tsv"
-
-            sudo install -m 0644 "$deploy_dir/final.conf" "$site_available"
-            sudo nginx -t
-            sudo systemctl reload nginx
-
-            while IFS="$(printf '\t')" read -r certificate_name domain_list; do
-              curl --fail --silent --show-error --head \
-                --resolve "$certificate_name:443:127.0.0.1" \
-                "https://$certificate_name/"
-            done < "$deploy_dir/certificates.tsv"
-
-            trap - ERR
-            rm -f "$backup_file"
-            rm -rf "$deploy_dir"
