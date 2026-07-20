@@ -1,0 +1,15 @@
+{
+  "sites": [
+    {
+      "domain": "zhq.info",
+      "aliases": [],
+      "default": {
+        "target": "https://wetcm.org.cn",
+        "status": 302,
+        "preservePath": true,
+        "preserveQuery": true
+      },
+      "routes": []
+    }
+  ]
+}

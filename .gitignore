@@ -3,6 +3,7 @@
 
 # Production
 /build
+/.redirect-build
 
 # Generated files
 .docusaurus
