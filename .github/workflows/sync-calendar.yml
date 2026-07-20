@@ -43,6 +43,8 @@ jobs:
 
             echo ""
             echo "Checking cal.wetcm.org.cn TLS certificate and HTTPS endpoint..."
+            calendar_headers=$(mktemp)
+            trap 'rm -f "$calendar_headers"' EXIT
             echo | openssl s_client \
               -connect cal.wetcm.org.cn:443 \
               -servername cal.wetcm.org.cn 2>/dev/null | \
@@ -64,4 +66,12 @@ jobs:
               --head \
               --connect-timeout 10 \
               --max-time 30 \
+              --dump-header "$calendar_headers" \
+              --output /dev/null \
               https://cal.wetcm.org.cn/
+
+            cat "$calendar_headers"
+            if ! grep -Eiq '^content-type:[[:space:]]*text/html;[[:space:]]*charset=utf-8' "$calendar_headers"; then
+              echo "The calendar directory response does not declare UTF-8." >&2
+              exit 1
+            fi
