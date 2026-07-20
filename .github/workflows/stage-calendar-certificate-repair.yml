@@ -1,0 +1,42 @@
+name: Stage calendar certificate repair
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ops/repair-calendar-certificate.sh
+      - .github/workflows/stage-calendar-certificate-repair.yml
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate repair script
+        run: bash -n ops/repair-calendar-certificate.sh
+
+      - name: Upload repair script
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "ops/repair-calendar-certificate.sh"
+          target: "/tmp/calendar-certificate-repair"
+          strip_components: 1
+
+      - name: Show one-time repair command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -eu
+            test -s /tmp/calendar-certificate-repair/repair-calendar-certificate.sh
+            echo "Repair script staged successfully. Run once as an administrator:"
+            echo "  sudo bash /tmp/calendar-certificate-repair/repair-calendar-certificate.sh"

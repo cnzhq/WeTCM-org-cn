@@ -32,6 +32,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -eu
             echo "Deployed calendars:"
             ls -la /var/www/html/calendars/
             echo ""
@@ -39,3 +40,28 @@ jobs:
             for file in /var/www/html/calendars/*.ics; do
               echo "  https://cal.wetcm.org.cn/$(basename $file)"
             done
+
+            echo ""
+            echo "Checking cal.wetcm.org.cn TLS certificate and HTTPS endpoint..."
+            echo | openssl s_client \
+              -connect cal.wetcm.org.cn:443 \
+              -servername cal.wetcm.org.cn 2>/dev/null | \
+              openssl x509 -noout -subject -issuer -dates -ext subjectAltName
+
+            if ! echo | openssl s_client \
+              -connect cal.wetcm.org.cn:443 \
+              -servername cal.wetcm.org.cn 2>/dev/null | \
+              openssl x509 -checkend 1209600 -noout; then
+              echo "The cal.wetcm.org.cn certificate expires in less than 14 days." >&2
+              exit 1
+            fi
+
+            curl \
+              --noproxy '*' \
+              --fail \
+              --silent \
+              --show-error \
+              --head \
+              --connect-timeout 10 \
+              --max-time 30 \
+              https://cal.wetcm.org.cn/
