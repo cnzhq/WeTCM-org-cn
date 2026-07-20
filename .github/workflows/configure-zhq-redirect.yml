@@ -9,6 +9,7 @@ on:
       - config/redirects.json
       - scripts/generate-redirect-nginx.cjs
       - ops/deploy-managed-redirects
+      - ops/install-redirect-deployer.sh
       - .github/workflows/configure-zhq-redirect.yml
 
 jobs:
@@ -18,8 +19,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate and generate Nginx configuration
-        run: node scripts/generate-redirect-nginx.cjs
+      - name: Validate tooling and generate Nginx configuration
+        run: |
+          bash -n ops/deploy-managed-redirects
+          bash -n ops/install-redirect-deployer.sh
+          node scripts/generate-redirect-nginx.cjs
 
       - name: Upload generated configuration
         uses: appleboy/scp-action@master
@@ -48,9 +52,19 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            if ! sudo -n /usr/local/sbin/deploy-managed-redirects; then
+            set -eu
+            action_user=$(id -un)
+            printf '%s\n' "$action_user" > /tmp/managed-redirects/ssh-user
+            echo "GitHub Actions SSH user: $action_user"
+
+            if ! sudo -n -l /usr/local/sbin/deploy-managed-redirects >/dev/null 2>&1; then
               echo "Redirect deployer is not authorized yet." >&2
+              echo "Current GitHub Actions SSH user: $action_user" >&2
               echo "SSH into the server once and run:" >&2
               echo "  sudo bash /tmp/managed-redirects/install-redirect-deployer.sh" >&2
+              echo "Explicit-user fallback:" >&2
+              echo "  sudo bash /tmp/managed-redirects/install-redirect-deployer.sh $action_user" >&2
               exit 1
             fi
+
+            sudo -n /usr/local/sbin/deploy-managed-redirects
