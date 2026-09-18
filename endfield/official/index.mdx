@@ -1,0 +1,34 @@
+---
+title: 官方信息
+sidebar_position: 1
+description: 按发行地区整理《明日方舟：终末地》官方信息。
+searchDate: 2026-09-18
+---
+
+import CsvSortableTable from '@site/src/components/SortableTable';
+
+# 官方信息
+
+:::info[如何维护这张表]
+
+表格内容来自 `static/data/endfield/official-sources.csv`。你可以使用 Excel、WPS 或其他表格软件编辑该文件，并以 **CSV UTF-8（逗号分隔）**格式保存。网页会自动读取内容并提供表头排序。
+
+:::
+
+## 官方来源目录
+
+<CsvSortableTable src="/data/endfield/official-sources.csv" />
+
+## 字段说明
+
+- `地区`：用于显示和排序的地区名称。
+- `旗帜`：可以直接填写旗帜 Emoji，例如 `🇨🇳`、`🇯🇵` 或 `🌐`。
+- `名称`：站点或账号名称。
+- `网址`：点击名称后打开的链接。
+- `类型`：例如官方网站、社交媒体、视频频道或平台商店。
+- `语言`：主要使用语言。
+- `状态`：例如已核验、待核验、已失效。
+- `最后核验`：建议使用 `YYYY-MM-DD`。
+- `图片`：可选，填写 `/img/endfield/example.png` 一类站内图片路径。
+
+如果单元格内本身包含英文逗号，请让表格软件自动保存，或使用英文双引号包住整个单元格。

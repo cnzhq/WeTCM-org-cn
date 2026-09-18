@@ -121,9 +121,40 @@ html.plugin-id-endfield .breadcrumbs__link:hover {
   color: #fffa00;
 }
 
-html.plugin-id-endfield .theme-admonition,
 html.plugin-id-endfield code {
   color: #f5f5f7;
+}
+
+/* Docusaurus 会根据全站主题偏好给提示框注入浅色背景；终末地固定覆盖为深色。 */
+html.plugin-id-endfield .theme-admonition {
+  --ifm-alert-background-color: #151816;
+  --ifm-alert-background-color-highlight: rgba(255, 250, 0, 0.08);
+  --ifm-alert-border-color: #fffa00;
+  border: 1px solid rgba(255, 250, 0, 0.3);
+  border-left: 4px solid #fffa00;
+  background: #151816;
+  color: #e3e6e3;
+  box-shadow: none;
+}
+
+html.plugin-id-endfield .theme-admonition [class*='admonitionHeading'],
+html.plugin-id-endfield .theme-admonition [class*='admonitionIcon'] {
+  color: #fffa00;
+}
+
+html.plugin-id-endfield .theme-admonition [class*='admonitionIcon'] svg,
+html.plugin-id-endfield .theme-admonition [class*='admonitionIcon'] path {
+  fill: currentColor;
+}
+
+html.plugin-id-endfield .theme-admonition [class*='admonitionContent'],
+html.plugin-id-endfield .theme-admonition p,
+html.plugin-id-endfield .theme-admonition li {
+  color: #e3e6e3;
+}
+
+html.plugin-id-endfield .theme-admonition a {
+  color: #fffa00;
 }
 
 html.plugin-id-endfield .wetcmFooter {

@@ -1,0 +1,250 @@
+.tableFrame {
+  margin: 1.5rem 0 2rem;
+  font-family: 'MiSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.scrollArea {
+  max-width: 100%;
+  overflow-x: auto;
+  outline: none;
+}
+
+.scrollArea:focus-visible {
+  outline: 2px solid #fffa00;
+  outline-offset: 2px;
+}
+
+.table {
+  width: 100%;
+  min-width: 760px;
+  margin: 0;
+  border: 1px solid #72777d;
+  border-collapse: collapse;
+  background: #202122;
+  color: #eaecf0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+/* caption 仍提供给读屏器，但视觉上保持维基式的纯表格外观。 */
+.table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.table th,
+.table td {
+  border: 1px solid #72777d;
+  padding: 0.48rem 0.65rem;
+  vertical-align: middle;
+}
+
+.table th {
+  position: relative;
+  height: 54px;
+  background: #27292d;
+  color: #eaecf0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table td {
+  background: #202122;
+  color: #eaecf0;
+  text-align: left;
+}
+
+.table th button {
+  position: relative;
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  padding: 0 1.35rem 0 0.2rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.table th button:hover,
+.table th button:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.table th button:focus-visible {
+  outline: 2px solid #fffa00;
+  outline-offset: 2px;
+}
+
+.table tbody tr:hover td {
+  background: #282a2d;
+}
+
+.table a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+.table a:hover {
+  color: #adc9ff;
+  text-decoration: underline;
+}
+
+.sortMark {
+  position: absolute;
+  top: 50%;
+  right: 0.15rem;
+  width: 11px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transform: translateY(-50%);
+}
+
+.sortUp,
+.sortDown {
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.sortUp {
+  border-bottom: 6px solid #eaecf0;
+}
+
+.sortDown {
+  border-top: 6px solid #eaecf0;
+}
+
+.unsorted .sortUp,
+.unsorted .sortDown {
+  opacity: 0.82;
+}
+
+.asc .sortDown,
+.desc .sortUp {
+  opacity: 0.22;
+}
+
+.asc .sortUp,
+.desc .sortDown {
+  border-bottom-color: #fffa00;
+  border-top-color: #fffa00;
+  opacity: 1;
+}
+
+.identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-width: max-content;
+}
+
+.identityImage {
+  width: 32px;
+  height: 21px;
+  border: 1px solid #a2a9b1;
+  border-radius: 0;
+  object-fit: cover;
+  background: #fff;
+}
+
+.identityEmoji {
+  min-width: 1.7em;
+  font-size: 1.28rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.identityEmoji :global(img.emoji) {
+  width: 1.7em;
+  height: 1.18em;
+  margin: 0;
+  object-fit: cover;
+  vertical-align: -0.16em;
+}
+
+.regionIdentity,
+.siteIdentity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-width: max-content;
+}
+
+.flag {
+  min-width: 1.7em;
+  font-size: 1.28rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.flag :global(img.emoji) {
+  width: 1.7em;
+  height: 1.18em;
+  margin: 0;
+  object-fit: cover;
+  vertical-align: -0.16em;
+}
+
+.siteIdentity img {
+  width: 32px;
+  height: 21px;
+  border: 1px solid #a2a9b1;
+  object-fit: cover;
+  background: #fff;
+}
+
+/* 状态保留颜色区分，但去掉胶囊卡片感，接近百科表格的普通文本。 */
+.badge {
+  display: inline;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  font-size: inherit;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.neutral { color: #eaecf0; }
+.yellow { color: #fff76a; }
+.green { color: #72d794; }
+.red { color: #ff8d73; }
+
+.emptyCell {
+  height: 120px;
+  color: #a2a9b1 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 640px) {
+  .tableFrame {
+    margin-inline: -0.5rem;
+  }
+
+  .table {
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.42rem 0.55rem;
+  }
+}
