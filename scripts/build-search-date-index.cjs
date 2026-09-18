@@ -9,6 +9,7 @@ const sources = [
   {dir: 'literature', section: '文学', routeBasePath: '/literature'},
   {dir: 'docs', section: '文档', routeBasePath: '/docs'},
   {dir: 'book', section: '图书', routeBasePath: '/book'},
+  {dir: 'endfield', section: '终末地', routeBasePath: '/endfield'},
 ];
 
 function listMarkdownFiles(dir) {
@@ -102,6 +103,7 @@ function resolveDate(source, frontMatter, filePath) {
 
 function stripMarkdown(content) {
   return content
+    .replace(/^import\s+.+$/gm, ' ')
     .replace(/\{\/\*\s*truncate\s*\*\/\}/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/```[\s\S]*?```/g, ' ')

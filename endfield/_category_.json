@@ -1,0 +1,8 @@
+{
+  "label": "终末地情报站",
+  "position": 1,
+  "link": {
+    "type": "doc",
+    "id": "intro"
+  }
+}

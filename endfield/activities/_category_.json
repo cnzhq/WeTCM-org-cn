@@ -1,0 +1,8 @@
+{
+  "label": "活动日历",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "activities/index"
+  }
+}

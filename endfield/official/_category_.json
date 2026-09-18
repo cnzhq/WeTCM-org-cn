@@ -1,0 +1,8 @@
+{
+  "label": "官方信息",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "official/index"
+  }
+}

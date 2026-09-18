@@ -110,8 +110,8 @@ const config = {
         indexDocs: true,
         indexBlog: true,
         indexPages: false,
-        docsRouteBasePath: ['/docs', '/literature', '/book'],
-        docsDir: ['docs', 'literature', 'book'],
+        docsRouteBasePath: ['/docs', '/literature', '/book', '/endfield'],
+        docsDir: ['docs', 'literature', 'book', 'endfield'],
         blogRouteBasePath: '/blog',
         blogDir: 'blog',
         zhUserDictPath,
@@ -124,6 +124,7 @@ const config = {
           {label: '博客', path: 'blog'},
           {label: '文学', path: 'literature'},
           {label: '图书', path: 'book'},
+          {label: '终末地', path: 'endfield'},
         ],
         useAllContextsWithNoSearchContext: true,
         searchBarShortcut: true,
@@ -197,6 +198,16 @@ const config = {
         ],
       },
     ],
+    // 《明日方舟：终末地》资料与讨论专区
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'endfield',
+        path: 'endfield',
+        routeBasePath: 'endfield',
+        sidebarPath: './config/sidebars/endfield.js',
+      },
+    ],
   ],
 
   themeConfig:
@@ -217,6 +228,7 @@ const config = {
         
         items: [
           {to: '/docs/intro', label: '文档', position: 'left'},
+          {to: '/endfield', label: '终末地', position: 'left'},
           {to: '/blog', label: '博客', position: 'left'},
           {to: '/literature/intro', label: '文学', position: 'left'},
           {to: '/book/intro', label: '图书', position: 'left'},

@@ -38,6 +38,126 @@
 }
 
 /* =========================================
+   终末地专区主题
+   ========================================= */
+
+/*
+ * 终末地专区固定为深色外观。这里不修改 Docusaurus 保存的全站主题偏好，
+ * 因此用户离开专区后仍会回到原先选择的自动、浅色或深色模式。
+ */
+html.plugin-id-endfield {
+  color-scheme: dark;
+  --ifm-background-color: #000;
+  --ifm-background-surface-color: #111412;
+  --ifm-font-color-base: #f5f5f7;
+  --ifm-font-color-secondary: #c7cbc8;
+  --ifm-heading-color: #f5f5f7;
+  --ifm-navbar-background-color: rgba(0, 0, 0, 0.86);
+  --ifm-footer-background-color: #000;
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.16);
+  --ifm-color-emphasis-0: #000;
+  --ifm-color-emphasis-100: #111412;
+  --ifm-color-emphasis-200: #242825;
+  --ifm-color-emphasis-300: #393e3a;
+  --ifm-color-emphasis-600: #a6aca8;
+  --ifm-color-emphasis-700: #c7cbc8;
+  --ifm-color-emphasis-800: #e3e6e3;
+  --ifm-color-emphasis-900: #f5f5f7;
+  --ifm-color-primary: #fffa00;
+  --ifm-color-primary-dark: #e6e100;
+  --ifm-color-primary-darker: #d9d500;
+  --ifm-color-primary-darkest: #b3af00;
+  --ifm-color-primary-light: #fffb26;
+  --ifm-color-primary-lighter: #fffb39;
+  --ifm-color-primary-lightest: #fffda0;
+  --ifm-link-color: #fffa00;
+  --ifm-link-hover-color: #fffda0;
+}
+
+html.plugin-id-endfield body,
+html.plugin-id-endfield .main-wrapper {
+  background: #000;
+  color: #f5f5f7;
+}
+
+html.plugin-id-endfield .navbar {
+  background: rgba(0, 0, 0, 0.86);
+}
+
+html.plugin-id-endfield .wetcmAppleNavBrand,
+html.plugin-id-endfield .wetcmAppleNavLink,
+html.plugin-id-endfield .wetcmAppleNavSearchLink {
+  color: rgba(245, 245, 247, 0.8);
+}
+
+html.plugin-id-endfield .wetcmAppleNavBrand:hover,
+html.plugin-id-endfield .wetcmAppleNavLink:hover,
+html.plugin-id-endfield .wetcmAppleNavSearchLink:hover {
+  color: #fffa00;
+}
+
+html.plugin-id-endfield .wetcmAppleNavMobile,
+html.plugin-id-endfield .navbar-sidebar {
+  background: rgba(0, 0, 0, 0.98);
+}
+
+html.plugin-id-endfield .wetcmWikiTocToggle {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.9);
+  color: #f5f5f7;
+}
+
+html.plugin-id-endfield .menu__link,
+html.plugin-id-endfield .table-of-contents__link,
+html.plugin-id-endfield .breadcrumbs__link {
+  color: #c7cbc8;
+}
+
+html.plugin-id-endfield .menu__link:hover,
+html.plugin-id-endfield .menu__link--active,
+html.plugin-id-endfield .table-of-contents__link:hover,
+html.plugin-id-endfield .table-of-contents__link--active,
+html.plugin-id-endfield .breadcrumbs__link:hover {
+  color: #fffa00;
+}
+
+html.plugin-id-endfield .theme-admonition,
+html.plugin-id-endfield code {
+  color: #f5f5f7;
+}
+
+html.plugin-id-endfield .wetcmFooter {
+  background: #000;
+  color: #a1a1a6;
+}
+
+html.plugin-id-endfield .wetcmFooter a,
+html.plugin-id-endfield .wetcmFooterColumn h2,
+html.plugin-id-endfield .wetcmFooterDisclosure summary {
+  color: #d2d2d7;
+}
+
+html.plugin-id-endfield .wetcmFooter a:hover {
+  color: #fffa00;
+}
+
+/* 专区只有一种主题，因此不显示没有实际作用的主题切换按钮。 */
+html.plugin-id-endfield .wetcmAppleNavThemeToggle {
+  display: none;
+}
+
+/* 整个终末地专区（包括首页）统一使用黄色文本选区。 */
+html.plugin-id-endfield ::selection {
+  background: #fffa00;
+  color: #15181b;
+}
+
+html.plugin-id-endfield ::-moz-selection {
+  background: #fffa00;
+  color: #15181b;
+}
+
+/* =========================================
    2. 字体引入 (Fonts)
    ========================================= */
 

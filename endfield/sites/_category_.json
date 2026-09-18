@@ -1,0 +1,8 @@
+{
+  "label": "站点导航",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "sites/index"
+  }
+}

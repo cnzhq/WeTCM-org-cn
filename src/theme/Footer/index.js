@@ -7,6 +7,7 @@ const footerColumns = [
     title: '探索',
     links: [
       {label: '文档', to: '/docs/intro'},
+      {label: '终末地', to: '/endfield'},
       {label: '博客', to: '/blog'},
       {label: '文学', to: '/literature/intro'},
       {label: '图书', to: '/book/intro'},
@@ -140,6 +141,8 @@ export default function Footer() {
         <div className="wetcmFooterMore">
           <span>更多站点入口：</span>
           <Link to="/docs/intro">文档</Link>
+          <span>、</span>
+          <Link to="/endfield">终末地</Link>
           <span>、</span>
           <Link to="/blog">博客</Link>
           <span>、</span>

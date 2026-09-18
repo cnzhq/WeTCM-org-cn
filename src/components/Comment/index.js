@@ -1,9 +1,12 @@
 import React from 'react';
 import Giscus from '@giscus/react';
+import {useLocation} from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
 
 export default function GiscusComponent() {
   const { colorMode } = useColorMode();
+  const location = useLocation();
+  const isEndfield = location.pathname.startsWith('/endfield');
 
   return (
     // 这里的容器加一点上边距，让评论区和文章内容稍微隔开
@@ -19,7 +22,7 @@ export default function GiscusComponent() {
         reactionsEnabled="1"            // 开启点赞/表情功能
         emitMetadata="0"
         inputPosition="top"             // 评论框放在上方
-        theme={colorMode === 'dark' ? 'transparent_dark' : 'light'} // 自动跟随网站深浅色模式
+        theme={isEndfield || colorMode === 'dark' ? 'transparent_dark' : 'light'}
         lang="zh-CN"
         loading="lazy"
       />

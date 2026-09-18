@@ -1,0 +1,8 @@
+{
+  "label": "视频资料",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "media/index"
+  }
+}
