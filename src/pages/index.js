@@ -1,5 +1,6 @@
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import homepageVisibility from '@site/config/homepage-visibility';
 import styles from './index.module.css';
 
 const featureCards = [
@@ -67,15 +68,12 @@ function ShowcaseCard({title, subtitle, primaryLabel, primaryTo, tone}) {
 
 export default function Home() {
   return (
-    <Layout title="首页" description="皇家太医院 WeTCM，中医知识、写作与资料入口。">
+    <Layout title="首页" description="苏州知轶互联网工作室 WeTCM，中医知识、写作与资料入口。">
       <main className={styles.homepage}>
         <section className={`${styles.heroSection} ${styles.fullBleed}`}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>WeTCM</p>
-            <h1>皇家太医院</h1>
-            <p className={styles.heroSubtitle}>
-              不仅是一个安静、清晰、可持续整理的中医知识站。
-            </p>
+            <h1>苏州知轶互联网工作室</h1>
             <CtaLinks
               primaryLabel="开始阅读"
               primaryTo="/docs/intro"
@@ -92,48 +90,52 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`${styles.statementSection} ${styles.fullBleed}`}>
-          <div className={styles.statementCopy}>
-            <h2>传承精华 守正创新</h2>
-            <p>
-              加快推进中医药现代化、产业化，坚持中西医并重，推动中医药和西医药相互补充、协调发展，推动中医药事业和产业高质量发展，推动中医药走向世界，充分发挥中医药防病治病的独特优势和作用，为建设健康中国、实现中华民族伟大复兴的中国梦贡献力量。
-            </p>
-          </div>
-        </section>
-
-        <section className={styles.productSection}>
-          <article className={`${styles.widePanel} ${styles.docsPanel}`}>
-            <div className={styles.panelCopy}>
-              <p className={styles.eyebrow}>Knowledge</p>
-              <h2>文档</h2>
-              <p>把中医基础、大学资料与长期笔记放进一条清晰的阅读路线。</p>
-              <CtaLinks
-                primaryLabel="进入文档"
-                primaryTo="/docs/intro"
-                secondaryLabel="中医基础"
-                secondaryTo="/book/intro"
-              />
+        {homepageVisibility.showStatement && (
+          <section className={`${styles.statementSection} ${styles.fullBleed}`}>
+            <div className={styles.statementCopy}>
+              <h2>传承精华 守正创新</h2>
+              <p>
+                加快推进中医药现代化、产业化，坚持中西医并重，推动中医药和西医药相互补充、协调发展，推动中医药事业和产业高质量发展，推动中医药走向世界，充分发挥中医药防病治病的独特优势和作用，为建设健康中国、实现中华民族伟大复兴的中国梦贡献力量。
+              </p>
             </div>
-            <div className={styles.docsVisual} aria-hidden="true">
-              <span>阴阳者天地之道也</span>
-              <span>气血津液运行有常</span>
-              <span>望闻问切以辨寒热</span>
-              <span>君臣佐使各有所主</span>
-              <span>读书临证反复参详</span>
-              <span>经络脏腑互为表里</span>
-              <span>五运六气各有所纪</span>
-              <span>寒热虚实审证求因</span>
-              <span>升降出入无器不有</span>
-              <span>法随证立方从法出</span>
-            </div>
-          </article>
+          </section>
+        )}
 
-          <div className={styles.cardGrid}>
-            {featureCards.map((card) => (
-              <ShowcaseCard key={card.title} {...card} />
-            ))}
-          </div>
-        </section>
+        {homepageVisibility.showProducts && (
+          <section className={styles.productSection}>
+            <article className={`${styles.widePanel} ${styles.docsPanel}`}>
+              <div className={styles.panelCopy}>
+                <p className={styles.eyebrow}>Knowledge</p>
+                <h2>文档</h2>
+                <p>把中医基础、大学资料与长期笔记放进一条清晰的阅读路线。</p>
+                <CtaLinks
+                  primaryLabel="进入文档"
+                  primaryTo="/docs/intro"
+                  secondaryLabel="中医基础"
+                  secondaryTo="/book/intro"
+                />
+              </div>
+              <div className={styles.docsVisual} aria-hidden="true">
+                <span>阴阳者天地之道也</span>
+                <span>气血津液运行有常</span>
+                <span>望闻问切以辨寒热</span>
+                <span>君臣佐使各有所主</span>
+                <span>读书临证反复参详</span>
+                <span>经络脏腑互为表里</span>
+                <span>五运六气各有所纪</span>
+                <span>寒热虚实审证求因</span>
+                <span>升降出入无器不有</span>
+                <span>法随证立方从法出</span>
+              </div>
+            </article>
+
+            <div className={styles.cardGrid}>
+              {featureCards.map((card) => (
+                <ShowcaseCard key={card.title} {...card} />
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     </Layout>
   );

@@ -15,7 +15,7 @@ const zhUserDictPath = path.resolve('./config/search/zh-user-dict.txt');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '皇家太医院',
+  title: '苏州知轶互联网工作室',
   tagline: 'WeTCM',
   favicon: 'img/pic_logo_1333.png',
 
@@ -219,7 +219,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: '皇家太医院',
+        title: '苏州知轶互联网工作室',
         
         logo: {
           alt: 'My Site Logo',

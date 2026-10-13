@@ -22,4 +22,8 @@ yarn-error.log*
 .env
 .docusaurus-serve.*.log
 
+# Machine-local Codex/MCP configuration and credentials
+.codex/config.toml
+.codex-owner-backup-*/
+
 basic-all.md

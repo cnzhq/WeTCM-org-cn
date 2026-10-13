@@ -50,7 +50,7 @@ const footerColumns = [
   //   links: [
   //     {label: 'CC BY-SA 4.0', href: 'https://creativecommons.org/licenses/by-sa/4.0/'},
   //     // {label: '医疗免责声明', href: 'https://zgcx.nhc.gov.cn/doctor'},
-  //     {label: '苏ICP备2024061225号-2', href: 'https://beian.miit.gov.cn/'},
+  //     {label: '苏ICP备2024061225号', href: 'https://beian.miit.gov.cn/'},
   //     {
   //       label: '苏公网安备32050902103224号',
   //       href: 'https://beian.miit.gov.cn/#/query/webSearch?code=32050902103224',
@@ -151,13 +151,13 @@ export default function Footer() {
         </div>
 
         <div className="wetcmFooterLegal">
-          <p>Copyright © {year} WeTCM. 保留所有权利。</p>
+          <p>Copyright © {year} 苏州知轶互联网工作室. 保留所有权利。</p>
           <ul>
             <li>
               <Link href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</Link>
             </li>
             <li>
-              <Link href="https://beian.miit.gov.cn/">苏ICP备2024061225号-2</Link>
+              <Link href="https://beian.miit.gov.cn/">苏ICP备2024061225号</Link>
             </li>
             <li>
               <Link href="https://beian.miit.gov.cn/#/query/webSearch?code=32050902103224">
