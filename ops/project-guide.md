@@ -57,5 +57,6 @@ type(scope): 简明描述
 - [备案变更与恢复](icp-change-log.md)
 - [备案核查与待确认事项](icp-review.md)
 - [部署与生产验证](deployment.md)
+- [HTTPS 证书维护](tls-certificate-maintenance.md)
 - [Agent 协作说明](../AGENTS.md)
 - [执行计划约定](../.agents/PLANS.md)
